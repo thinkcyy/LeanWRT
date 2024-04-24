@@ -38,8 +38,8 @@ jobs:
           sudo -E apt clean
           sudo -E timedatectl set-timezone "Asia/Shanghai"
 
-      - name: Checkout OpenWrt
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@main
 
       - name: Update feeds
         run: |
@@ -86,7 +86,7 @@ jobs:
           path: ./artifact/package/
 
       - name: Upload firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
